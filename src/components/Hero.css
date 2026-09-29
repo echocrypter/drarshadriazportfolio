@@ -1,0 +1,990 @@
+
+/* =========================================
+   HERO SECTION — PREMIUM ACADEMIC EDITION
+   White · Slate · Electric Blue
+========================================= */
+
+.hero {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 110px 24px 100px;
+  margin-top: 0;
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      ellipse at 78% 38%,
+      rgba(59, 130, 246, 0.10),
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 8% 90%,
+      rgba(99, 102, 241, 0.045),
+      transparent 38%
+    ),
+    var(--bg-main, #ffffff);
+}
+
+/* =========================================
+   BACKGROUND ATMOSPHERE
+========================================= */
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  pointer-events: none;
+}
+
+.hero-glow-one {
+  width: 520px;
+  height: 520px;
+  top: -5%;
+  right: -4%;
+  background: rgba(59, 130, 246, 0.16);
+  opacity: 0.55;
+  animation: hero-glow-float 14s ease-in-out infinite alternate;
+}
+
+.hero-glow-two {
+  width: 380px;
+  height: 380px;
+  bottom: -18%;
+  left: -5%;
+  background: rgba(99, 102, 241, 0.10);
+  opacity: 0.65;
+  animation: hero-glow-float 18s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes hero-glow-float {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-20px, 25px, 0);
+  }
+}
+
+.hero-grid-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+
+  background-image:
+    linear-gradient(
+      rgba(59, 130, 246, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(59, 130, 246, 0.055) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+}
+
+.hero-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    120deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.30) 50%,
+    transparent 75%
+  );
+
+  opacity: 0.25;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.hero-container {
+  position: relative;
+  width: min(1220px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  align-items: center;
+  gap: clamp(45px, 6vw, 90px);
+
+  transform: translateY(28px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+
+  animation: hero-content-enter 1s
+    cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes hero-content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   HERO HEADING
+========================================= */
+
+.hero-title {
+  margin: 0;
+
+  color: var(--text-primary, #0f172a);
+
+  font-family: var(
+    --font-heading,
+    "Manrope",
+    sans-serif
+  );
+
+  font-size: clamp(60px, 6.5vw, 92px);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+  text-wrap: balance;
+
+  -webkit-text-stroke: 1.2px currentColor;
+}
+
+.hero-title-accent {
+  position: relative;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 10px;
+
+  font-weight: 900;
+  -webkit-text-stroke: 1.2px transparent;
+
+  background: linear-gradient(
+    110deg,
+    #1d4ed8 0%,
+    #2563eb 30%,
+    #60a5fa 60%,
+    #2563eb 85%,
+    #1d4ed8 100%
+  );
+
+  background-size: 250% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: hero-title-shine 9s ease-in-out infinite;
+}
+
+@keyframes hero-title-shine {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+}
+
+/* =========================================
+   PROFESSOR DESIGNATION
+========================================= */
+
+.hero-role-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.hero-role-line {
+  position: relative;
+  width: 34px;
+  height: 2px;
+  flex-shrink: 0;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #60a5fa
+  );
+
+  border-radius: 10px;
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.28);
+}
+
+.hero-role {
+  margin: 0;
+  color: var(--text-primary, #1e293b);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.6;
+}
+
+/* =========================================
+   INSTITUTION
+========================================= */
+
+.hero-institution {
+  margin: 15px 0 0;
+  color: var(--text-secondary, #475569);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.9;
+  letter-spacing: 0.005em;
+}
+
+.hero-institution span {
+  display: block;
+  margin-top: 2px;
+  color: var(--text-muted, #64748b);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+  max-width: 520px;
+  margin: 25px 0 0;
+  color: var(--text-secondary, #475569);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0.005em;
+}
+
+/* =========================================
+   CTA BUTTONS
+========================================= */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.hero-primary,
+.hero-secondary {
+  position: relative;
+  min-height: 52px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 0 23px;
+  overflow: hidden;
+  border-radius: 12px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  text-decoration: none;
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    color 0.35s ease;
+}
+
+/* =========================================
+   PRIMARY BUTTON
+========================================= */
+
+.hero-primary {
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #3b82f6 0%,
+    #2563eb 55%,
+    #1d4ed8 100%
+  );
+
+  border: 1px solid rgba(37, 99, 235, 0.65);
+
+  box-shadow:
+    0 8px 22px rgba(37, 99, 235, 0.20),
+    0 2px 5px rgba(15, 23, 42, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.hero-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.24),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+
+.hero-primary:hover {
+  transform: translateY(-3px);
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8
+  );
+
+  box-shadow:
+    0 14px 32px rgba(37, 99, 235, 0.26),
+    0 4px 10px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.hero-primary:hover::before {
+  left: 150%;
+}
+
+.hero-primary svg {
+  transition: transform 0.3s ease;
+}
+
+.hero-primary:hover svg {
+  transform: translateY(3px);
+}
+
+/* =========================================
+   SECONDARY BUTTON — PREMIUM GLASS
+========================================= */
+
+.hero-secondary {
+  color: var(--text-primary, #1e293b);
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(148, 163, 184, 0.38);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 4px 16px rgba(15, 23, 42, 0.025),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.hero-secondary:hover {
+  transform: translateY(-3px);
+  color: #1d4ed8;
+  background: rgba(239, 246, 255, 0.85);
+  border-color: rgba(59, 130, 246, 0.45);
+
+  box-shadow:
+    0 10px 28px rgba(37, 99, 235, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.hero-secondary-arrow {
+  opacity: 0.7;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hero-secondary:hover .hero-secondary-arrow {
+  opacity: 1;
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   PORTRAIT SECTION
+========================================= */
+
+.hero-visual {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+
+  animation: hero-visual-enter 1.15s
+    cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+  animation-delay: 0.12s;
+}
+
+@keyframes hero-visual-enter {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-portrait-orbit {
+  position: relative;
+  width: min(100%, 450px);
+  aspect-ratio: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  isolation: isolate;
+}
+
+/* =========================================
+   ORBIT RINGS
+========================================= */
+
+.hero-orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-orbit-ring-one {
+  inset: 0;
+  border: 1px solid rgba(59, 130, 246, 0.24);
+
+  box-shadow:
+    inset 0 0 45px rgba(59, 130, 246, 0.025),
+    0 0 50px rgba(59, 130, 246, 0.045);
+}
+
+.hero-orbit-ring-two {
+  inset: 19px;
+  border: 1px dashed rgba(59, 130, 246, 0.24);
+  animation: hero-orbit-rotate 65s linear infinite;
+}
+
+@keyframes hero-orbit-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   CIRCULAR IMAGE FRAME
+========================================= */
+
+.hero-image-frame {
+  position: relative;
+  width: 78%;
+  aspect-ratio: 1;
+
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 50%;
+
+  background: var(--bg-card, #f1f5f9);
+  border: 1px solid rgba(59, 130, 246, 0.38);
+
+  box-shadow:
+    0 0 0 8px rgba(255, 255, 255, 0.75),
+    0 0 0 9px rgba(59, 130, 246, 0.16),
+    0 25px 80px rgba(15, 23, 42, 0.12),
+    0 0 65px rgba(59, 130, 246, 0.10);
+
+  transition:
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.6s ease;
+}
+
+.hero-image-frame:hover {
+  transform: scale(1.015);
+
+  box-shadow:
+    0 0 0 8px rgba(255, 255, 255, 0.85),
+    0 0 0 10px rgba(59, 130, 246, 0.30),
+    0 30px 95px rgba(15, 23, 42, 0.15),
+    0 0 85px rgba(59, 130, 246, 0.15);
+}
+
+/* =========================================
+   PORTRAIT IMAGE — HAIR VISIBILITY FIX
+========================================= */
+
+.portrait-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  /*
+    Keep the portrait circular.
+    Scale the actual photo down slightly inside
+    the frame so the top of the hair is visible.
+  */
+
+  object-fit: cover;
+  object-position: center 18%;
+
+  border-radius: 50%;
+
+  /*
+    Main fix:
+    0.90 makes the photo slightly smaller.
+    This prevents the hair from touching
+    or being clipped by the circular edge.
+  */
+
+  transform: scale(0.90);
+  transform-origin: center center;
+
+  filter:
+    brightness(1.04)
+    contrast(1.035)
+    saturate(1.02);
+
+  backface-visibility: hidden;
+
+  transition:
+    transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.4s ease;
+}
+
+/*
+  Subtle hover zoom only.
+  The previous 1.045 zoom made the hair
+  appear more cropped on hover.
+*/
+
+.hero-image-frame:hover .portrait-image {
+  transform: scale(0.94);
+}
+
+/* =========================================
+   IMAGE SHINE
+========================================= */
+
+.hero-image-shine {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.19) 0%,
+    transparent 28%,
+    transparent 68%,
+    rgba(59, 130, 246, 0.08) 100%
+  );
+}
+
+/* =========================================
+   PORTRAIT CORNER DETAILS
+========================================= */
+
+.hero-image-corner {
+  position: absolute;
+  z-index: 3;
+
+  width: 35px;
+  height: 35px;
+
+  border-color: #3b82f6;
+  border-style: solid;
+  opacity: 0.75;
+  pointer-events: none;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.hero-corner-top {
+  top: 15%;
+  right: 10%;
+  border-width: 1px 1px 0 0;
+}
+
+.hero-corner-bottom {
+  bottom: 15%;
+  left: 10%;
+  border-width: 0 0 1px 1px;
+}
+
+.hero-image-frame:hover .hero-image-corner {
+  opacity: 1;
+}
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.hero-scroll {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  color: var(--text-muted, #64748b);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: color 0.3s ease;
+}
+
+.hero-scroll:hover {
+  color: var(--accent, #3b82f6);
+}
+
+.hero-scroll-line {
+  position: relative;
+  width: 42px;
+  height: 1px;
+  overflow: hidden;
+  background: rgba(59, 130, 246, 0.25);
+}
+
+.hero-scroll-line span {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  background: var(--accent, #3b82f6);
+  transform: translateX(-100%);
+
+  animation: hero-scroll-move 2.4s ease-in-out infinite;
+}
+
+@keyframes hero-scroll-move {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1100px) {
+  .hero {
+    min-height: 100svh;
+    padding: 105px 24px 100px;
+  }
+
+  .hero-container {
+    gap: 40px;
+    transform: translateY(20px);
+  }
+
+  .hero-title {
+    font-size: clamp(58px, 7vw, 78px);
+  }
+
+  .hero-portrait-orbit {
+    width: min(100%, 380px);
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+  .hero {
+    min-height: 100svh;
+    padding: 100px 24px 90px;
+    margin-top: 0;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 55px;
+    transform: translateY(0);
+  }
+
+  .hero-content {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(60px, 10vw, 86px);
+  }
+
+  .hero-title-accent {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-role-wrapper {
+    justify-content: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-portrait-orbit {
+    width: min(75vw, 390px);
+  }
+
+  .hero-scroll {
+    bottom: 22px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+  .hero {
+    min-height: 100svh;
+    padding: 85px 20px 85px;
+  }
+
+  .hero-container {
+    gap: 42px;
+    transform: translateY(0);
+  }
+
+  .hero-title {
+    font-size: clamp(49px, 12.5vw, 66px);
+    letter-spacing: -0.07em;
+    line-height: 1.02;
+  }
+
+  .hero-title-accent {
+    margin-top: 7px;
+  }
+
+  .hero-role-wrapper {
+    margin-top: 25px;
+    gap: 9px;
+  }
+
+  .hero-role-line {
+    width: 22px;
+  }
+
+  .hero-role {
+    font-size: 12px;
+  }
+
+  .hero-institution {
+    margin-top: 12px;
+    font-size: 12px;
+  }
+
+  .hero-institution span {
+    font-size: 11px;
+  }
+
+  .hero-description {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .hero-primary,
+  .hero-secondary {
+    width: 100%;
+    min-height: 50px;
+    border-radius: 11px;
+  }
+
+  .hero-portrait-orbit {
+    width: min(82vw, 340px);
+  }
+
+  .hero-orbit-ring-two {
+    inset: 13px;
+  }
+
+  .hero-image-frame {
+    width: 78%;
+  }
+
+  /*
+    Keep the hair visible on mobile too.
+    Slightly smaller scale prevents tight cropping.
+  */
+
+  .portrait-image {
+    transform: scale(0.88);
+    object-position: center 18%;
+  }
+
+  .hero-image-frame:hover .portrait-image {
+    transform: scale(0.92);
+  }
+
+  .hero-image-corner {
+    width: 25px;
+    height: 25px;
+  }
+
+  .hero-scroll {
+    font-size: 8px;
+    bottom: 18px;
+    gap: 10px;
+  }
+
+  .hero-scroll-line {
+    width: 28px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .hero {
+    min-height: 100svh;
+    padding: 80px 16px 85px;
+  }
+
+  .hero-title {
+    font-size: 47px;
+  }
+
+  .hero-portrait-orbit {
+    width: min(86vw, 300px);
+  }
+
+  .hero-role {
+    font-size: 11px;
+  }
+
+  .portrait-image {
+    transform: scale(0.86);
+  }
+
+  .hero-image-frame:hover .portrait-image {
+    transform: scale(0.90);
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.hero-primary:focus-visible,
+.hero-secondary:focus-visible,
+.hero-scroll:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.65);
+  outline-offset: 5px;
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow-one,
+  .hero-glow-two,
+  .hero-title-accent,
+  .hero-orbit-ring-two,
+  .hero-scroll-line span,
+  .hero-content,
+  .hero-visual {
+    animation: none !important;
+  }
+
+  .hero-image-frame,
+  .portrait-image,
+  .hero-primary,
+  .hero-secondary,
+  .hero-image-corner {
+    transition: none !important;
+  }
+}

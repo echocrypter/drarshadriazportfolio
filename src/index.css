@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+/* =========================================
+   GLOBAL THEME VARIABLES
+   ========================================= */
+
+:root {
+  /* Main backgrounds */
+  --bg-main: #FFFFFF;
+  --bg-secondary: #F1F5F9;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F1F5F9;
+
+  /* Typography */
+  --text-primary: #1E293B;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+
+  /* Blue accent */
+  --accent: #3B82F6;
+  --accent-bright: #60A5FA;
+  --accent-dark: #2563EB;
+
+  /* Borders */
+  --border: rgba(30, 41, 59, 0.10);
+  --border-strong: rgba(59, 130, 246, 0.35);
+  --white-border: rgba(255, 255, 255, 0.8);
+
+  /* Shadows */
+  --shadow: 0 25px 80px rgba(30, 41, 59, 0.10);
+  --brown-shadow: 0 12px 35px rgba(59, 130, 246, 0.12);
+
+  /* Fonts */
+  --font-body: "DM Sans", sans-serif;
+  --font-heading: "Manrope", sans-serif;
+
+  /* Compatibility aliases for existing sections */
+  --violet: #3B82F6;
+  --violet-bright: #60A5FA;
+  --violet-dark: #2563EB;
+
+  /* Additional compatibility variables */
+  --background: var(--bg-main);
+  --surface: var(--bg-card);
+  --foreground: var(--text-primary);
+  --muted: var(--text-muted);
+  --accent-color: var(--accent);
+}
+
+/* =========================================
+   GLOBAL RESET
+   ========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  background: var(--bg-main);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  background: var(--bg-main);
+  color: var(--text-primary);
+
+  font-family: var(--font-body);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+}
+
+/* =========================================
+   GLOBAL SELECTION
+   ========================================= */
+
+::selection {
+  background: var(--accent);
+  color: #FFFFFF;
+}
+
+/* =========================================
+   GLOBAL SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* =========================================
+   REACT ROOT
+   ========================================= */
+
+#root {
+  min-height: 100vh;
+  background: var(--bg-main);
+  color: var(--text-primary);
+}
+
+/* =========================================
+   GLOBAL IMAGE BEHAVIOR
+   ========================================= */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

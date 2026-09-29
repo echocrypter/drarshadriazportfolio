@@ -1,0 +1,209 @@
+/* =========================================
+   FOOTER
+   Premium White & Light Blue Glass Theme
+========================================= */
+
+.site-footer {
+  position: relative;
+  padding: 17px 24px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  border-top: 1px solid rgba(59, 130, 246, 0.15);
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  overflow: hidden;
+}
+
+/* =========================================
+   LIGHT BLUE GLASS REFLECTION
+========================================= */
+
+.site-footer::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -100%;
+
+  width: 60%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    rgba(59, 130, 246, 0.65),
+    transparent
+  );
+
+  animation: footer-glass-shine 9s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+/* =========================================
+   FOOTER LAYOUT
+========================================= */
+
+.footer-inner {
+  position: relative;
+  z-index: 1;
+
+  width: min(1180px, 100%);
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #1E293B;
+
+  font-family: var(--font-heading, "Manrope", sans-serif);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.footer-brand:hover {
+  color: #2563EB;
+
+  text-shadow: 0 0 18px rgba(59, 130, 246, 0.15);
+}
+
+/* =========================================
+   BLUE BRAND DOT
+========================================= */
+
+.footer-brand-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #3B82F6;
+
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.35);
+}
+
+/* =========================================
+   EMAIL
+========================================= */
+
+.footer-email {
+  color: #64748B;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+
+.footer-email:hover {
+  color: #2563EB;
+}
+
+/* =========================================
+   COPYRIGHT
+========================================= */
+
+.footer-copy {
+  margin: 0;
+
+  color: #94A3B8;
+
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+/* =========================================
+   SHINE ANIMATION
+========================================= */
+
+@keyframes footer-glass-shine {
+  0% {
+    left: -60%;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  55% {
+    left: 110%;
+    opacity: 0;
+  }
+
+  100% {
+    left: 110%;
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   TABLET AND MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .site-footer {
+    padding: 17px 20px;
+  }
+
+  .footer-inner {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+
+  .footer-brand {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-email {
+    font-size: 10px;
+  }
+
+  .footer-copy {
+    font-size: 9px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer::before {
+    animation: none;
+  }
+
+  .footer-brand,
+  .footer-email {
+    transition: none;
+  }
+}

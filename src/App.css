@@ -1,0 +1,200 @@
+
+/* =========================================
+   GLOBAL SMOOTH SCROLLING
+========================================= */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Prevent content from being hidden behind
+   the fixed or sticky navigation bar. */
+
+section[id],
+div[id] {
+  scroll-margin-top: 100px;
+}
+
+/* =========================================
+   PAGE TRANSITIONS
+========================================= */
+
+.page-transition-wrapper {
+  width: 100%;
+  min-height: 60vh;
+  overflow: clip;
+  transform-origin: top center;
+  will-change: opacity, transform;
+}
+
+/* Avoid unwanted transitions on users
+   who prefer reduced motion. */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .page-transition-wrapper {
+    transform: none !important;
+  }
+}
+
+/* =========================================
+   HOME CONTACT SECTION
+========================================= */
+
+.home-contact {
+  position: relative;
+  overflow: hidden;
+  padding: 130px 24px;
+
+  background:
+    radial-gradient(
+      circle at 75% 50%,
+      rgba(255, 122, 0, 0.09),
+      transparent 35%
+    ),
+    var(--bg-secondary);
+
+  border-top: 1px solid var(--border);
+}
+
+.home-contact-glow {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  top: 50%;
+  right: -200px;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+  background: rgba(255, 122, 0, 0.07);
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+.home-contact-inner {
+  position: relative;
+  z-index: 1;
+
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.home-contact-label {
+  margin: 0 0 25px;
+
+  color: var(--accent-bright);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.home-contact h2 {
+  max-width: 900px;
+  margin: 0 0 30px;
+
+  color: #ffffff;
+  font-family: var(--font-heading);
+
+  font-size: clamp(42px, 6.5vw, 82px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.home-contact h2 span {
+  display: block;
+  margin-top: 8px;
+
+  color: var(--accent-bright);
+
+  text-shadow:
+    0 0 40px rgba(255, 122, 0, 0.18);
+}
+
+.home-contact-description {
+  max-width: 500px;
+  margin: 0 0 30px;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.home-contact-email {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 14px 0;
+
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+
+  border-bottom: 1px solid var(--border-strong);
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.home-contact-email:hover {
+  color: var(--accent-bright);
+  border-color: var(--accent-bright);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 720px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+
+  section[id],
+  div[id] {
+    scroll-margin-top: 80px;
+  }
+
+  .home-contact {
+    padding: 90px 20px;
+  }
+
+  .home-contact h2 {
+    font-size: clamp(38px, 10vw, 60px);
+  }
+
+  .home-contact-email {
+    font-size: 12px;
+  }
+
+  .home-contact-glow {
+    width: 300px;
+    height: 300px;
+    right: -150px;
+  }
+}

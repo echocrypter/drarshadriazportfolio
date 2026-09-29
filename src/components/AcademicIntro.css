@@ -1,0 +1,355 @@
+/* =========================================
+   ACADEMIC INTRO
+   Premium White & Light Blue Theme
+========================================= */
+
+.academic-intro {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 140px 24px;
+
+  background:
+    radial-gradient(
+      circle at 85% 50%,
+      rgba(96, 165, 250, 0.09),
+      transparent 34%
+    ),
+    var(--bg-secondary, #F1F5F9);
+
+  border-top: 1px solid var(--border, rgba(59, 130, 246, 0.12));
+  border-bottom: 1px solid var(--border, rgba(59, 130, 246, 0.12));
+}
+
+.academic-intro-inner {
+  width: min(1180px, 100%);
+  min-width: 0;
+  margin: 0 auto;
+}
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.academic-intro-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 28px;
+
+  border-bottom: 1px solid var(--border, rgba(59, 130, 246, 0.15));
+
+  color: var(--text-muted, #64748B);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+}
+
+.academic-intro-top span:first-child {
+  flex-shrink: 0;
+  color: var(--accent, #3B82F6);
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.academic-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: 80px;
+  padding-top: 75px;
+  min-width: 0;
+}
+
+.academic-intro-grid > * {
+  min-width: 0;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.academic-intro h2 {
+  width: 100%;
+  max-width: 800px;
+  margin: 0;
+
+  color: var(--text-primary, #1E293B);
+
+  font-family: var(--font-heading, "Manrope", sans-serif);
+  font-size: clamp(52px, 7vw, 94px);
+  line-height: 0.98;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+
+  /* Prevent heading from overflowing its container */
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.academic-intro h2 span {
+  display: block;
+  max-width: 100%;
+
+  color: var(--accent, #3B82F6);
+
+  transition: color 0.3s ease;
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.academic-intro-copy {
+  align-self: end;
+  min-width: 0;
+  padding-bottom: 5px;
+}
+
+.academic-intro-copy p {
+  margin: 0 0 22px;
+
+  color: var(--text-secondary, #475569);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* =========================================
+   ACADEMIC PROFILE LINK
+========================================= */
+
+.academic-intro-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  margin-top: 18px;
+  padding-bottom: 8px;
+
+  color: var(--text-primary, #1E293B);
+  text-decoration: none;
+
+  border-bottom: 1px solid var(--border-strong, rgba(59, 130, 246, 0.35));
+
+  font-size: 12px;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    gap 0.25s ease;
+}
+
+.academic-intro-link svg {
+  flex-shrink: 0;
+
+  color: var(--accent, #3B82F6);
+
+  transition: transform 0.25s ease;
+}
+
+.academic-intro-link:hover {
+  gap: 17px;
+
+  color: var(--accent-dark, #2563EB);
+  border-color: var(--accent, #3B82F6);
+}
+
+.academic-intro-link:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.academic-intro-top,
+.academic-intro h2,
+.academic-intro-copy {
+  opacity: 0;
+  transform: translateY(24px);
+
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  will-change: transform, opacity;
+}
+
+.academic-intro h2.academic-reveal-left {
+  transform: translateX(-32px);
+}
+
+.academic-intro-copy.academic-reveal-right {
+  transform: translateX(32px);
+}
+
+/* Explicitly reset animation transforms after reveal */
+
+.academic-intro-visible .academic-intro-top,
+.academic-intro-visible h2,
+.academic-intro-visible h2.academic-reveal-left,
+.academic-intro-visible .academic-intro-copy,
+.academic-intro-visible .academic-intro-copy.academic-reveal-right {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.academic-intro-visible .academic-intro-top {
+  transition-delay: 0.05s;
+}
+
+.academic-intro-visible h2 {
+  transition-delay: 0.15s;
+}
+
+.academic-intro-visible .academic-intro-copy {
+  transition-delay: 0.28s;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+  .academic-intro {
+    padding: 90px 24px;
+  }
+
+  .academic-intro-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+    padding-top: 48px;
+  }
+
+  .academic-intro h2 {
+    max-width: 100%;
+    font-size: clamp(44px, 8vw, 68px);
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .academic-intro-copy {
+    max-width: 620px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+  .academic-intro {
+    padding: 64px 20px;
+  }
+
+  .academic-intro-inner {
+    width: 100%;
+  }
+
+  .academic-intro-top {
+    gap: 12px;
+    padding-bottom: 20px;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+  }
+
+  .academic-intro-grid {
+    gap: 28px;
+    padding-top: 34px;
+  }
+
+  .academic-intro h2 {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: clamp(36px, 9.5vw, 50px);
+    line-height: 1.04;
+    letter-spacing: -0.045em;
+
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .academic-intro h2 span {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .academic-intro-copy {
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .academic-intro-copy p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  .academic-intro-link {
+    margin-top: 12px;
+  }
+
+  /* Avoid off-screen movement during mobile reveal */
+
+  .academic-intro h2.academic-reveal-left {
+    transform: translateY(20px);
+  }
+
+  .academic-intro-copy.academic-reveal-right {
+    transform: translateY(20px);
+  }
+
+  .academic-intro-visible h2.academic-reveal-left,
+  .academic-intro-visible .academic-intro-copy.academic-reveal-right {
+    transform: translate(0, 0);
+  }
+}
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+  .academic-intro {
+    padding: 54px 16px;
+  }
+
+  .academic-intro-grid {
+    padding-top: 28px;
+    gap: 24px;
+  }
+
+  .academic-intro h2 {
+    font-size: clamp(32px, 9.3vw, 36px);
+    letter-spacing: -0.04em;
+  }
+
+  .academic-intro-top {
+    font-size: 7px;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .academic-intro-top,
+  .academic-intro h2,
+  .academic-intro-copy {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+
+  .academic-intro-link,
+  .academic-intro-link svg,
+  .academic-intro h2 span {
+    transition: none;
+  }
+}
