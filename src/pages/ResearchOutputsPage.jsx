@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 
 import {
@@ -6,18 +7,9 @@ import {
   BookOpen,
   GraduationCap,
   Sparkles,
-  FileText,
-  CheckCircle2,
 } from "lucide-react";
 
 import "./ResearchOutputs.css";
-
-// IMPORTANT: The spelling here must match your actual filename.
-// If your file is reasearchOutputs.js, keep this import as written.
-import {
-  acceptedArticles,
-  submittedArticles,
-} from "../data/researchOutputs";
 
 const reviewedProjects = [
   {
@@ -382,156 +374,6 @@ function ResearchOutputsPage() {
         </div>
       </section>
 
-      {/* ACCEPTED ARTICLE */}
-      <section className="ro-articles">
-        <div className="ro-container">
-          <motion.div
-            className="ro-section-header"
-            variants={reveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <div>
-              <span className="ro-section-index">
-                04 — SCHOLARLY PUBLICATIONS
-              </span>
-
-              <h2>
-                Accepted <span>article.</span>
-              </h2>
-            </div>
-
-            <div className="ro-header-count">
-              <span>
-                {String(acceptedArticles.length).padStart(2, "0")}
-              </span>
-              <span>ARTICLE</span>
-            </div>
-          </motion.div>
-
-          <div className="ro-article-list">
-            {acceptedArticles.map((article, index) => (
-              <motion.article
-                className="ro-article-card ro-article-accepted"
-                key={article.number}
-                variants={reveal}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ delay: index * 0.08 }}
-              >
-                <div className="ro-article-card-top">
-                  <span className="ro-article-index">
-                    ARTICLE {String(article.number).padStart(3, "0")}
-                  </span>
-
-                  <span className="ro-article-status accepted">
-                    <CheckCircle2 size={15} />
-                    ACCEPTED
-                  </span>
-                </div>
-
-                <div className="ro-article-citation">
-                  <FileText
-                    className="ro-article-icon"
-                    size={22}
-                  />
-
-                  <p>{article.citation}</p>
-                </div>
-
-                <div className="ro-article-card-footer">
-                  <span>ACCEPTED ARTICLE</span>
-                  <span className="ro-card-footer-line" />
-                  <span>
-                    <CheckCircle2 size={14} />
-                    {article.number}
-                  </span>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SUBMITTED ARTICLES */}
-      <section className="ro-articles ro-submitted">
-        <div className="ro-container">
-          <motion.div
-            className="ro-section-header"
-            variants={reveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <div>
-              <span className="ro-section-index">
-                05 — MANUSCRIPTS
-              </span>
-
-              <h2>
-                Submitted <span>articles.</span>
-              </h2>
-
-              <p className="ro-articles-description">
-                Manuscripts and research articles listed in the
-                submitted articles record.
-              </p>
-            </div>
-
-            <div className="ro-header-count">
-              <span>
-                {String(submittedArticles.length).padStart(2, "0")}
-              </span>
-              <span>ARTICLES</span>
-            </div>
-          </motion.div>
-
-          <div className="ro-article-list">
-            {submittedArticles.map((article, index) => (
-              <motion.article
-                className="ro-article-card"
-                key={`${article.number}-${index}`}
-                variants={reveal}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.08 }}
-                transition={{ delay: (index % 4) * 0.08 }}
-              >
-                <div className="ro-article-card-top">
-                  <span className="ro-article-index">
-                    ARTICLE {String(article.number).padStart(3, "0")}
-                  </span>
-
-                  <span className="ro-article-status submitted">
-                    <FileText size={14} />
-                    SUBMITTED
-                  </span>
-                </div>
-
-                <div className="ro-article-citation">
-                  <FileText
-                    className="ro-article-icon"
-                    size={22}
-                  />
-
-                  <p>{article.citation}</p>
-                </div>
-
-                <div className="ro-article-card-footer">
-                  <span>SUBMITTED MANUSCRIPT</span>
-                  <span className="ro-card-footer-line" />
-                  <span>
-                    NO. {String(article.number).padStart(2, "0")}
-                  </span>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* SUPERVISION */}
       <section className="ro-supervision">
         <div className="ro-container">
@@ -598,7 +440,7 @@ function ResearchOutputsPage() {
               </div>
 
               <div className="ro-supervision-number">
-                16<span>+</span>
+                25<span>+</span>
               </div>
 
               <h3>BS / M.Sc</h3>

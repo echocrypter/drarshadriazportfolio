@@ -157,7 +157,7 @@ function AboutPage() {
       
     },
     {
-      number: "04",
+      number: "05",
       title: "Included in the list of top 2% scientists of the world by Standford University, USA.(2023)",
       description: "Recognized for significant contributions to the field of mathematics and research.",
       icon: Award,
@@ -165,7 +165,7 @@ function AboutPage() {
       
     },
     {
-      number: "04",
+      number: "06",
       title: "Included in the list of top 2% scientists of the world by Standford University, USA.(2024)",
       description: "Recognized for significant contributions to the field of mathematics and research.",
       icon: Award,

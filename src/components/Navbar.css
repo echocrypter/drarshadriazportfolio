@@ -1039,3 +1039,74 @@
     background: rgba(255, 255, 255, 0.99);
   }
 }
+/* =========================================
+   MOBILE NAVBAR — SOLID PREMIUM GLASS FIX
+========================================= */
+
+@media (max-width: 900px) {
+  .navbar {
+    background: rgba(255, 255, 255, 0.98) !important;
+
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.35);
+
+    box-shadow:
+      0 4px 18px rgba(15, 23, 42, 0.10),
+      0 1px 3px rgba(15, 23, 42, 0.04);
+
+    overflow: hidden;
+  }
+
+  /* Remove the bright glass reflection */
+  .navbar::before {
+    display: none !important;
+  }
+
+  /* Make the top edge subtle */
+  .navbar::after {
+    opacity: 0.35;
+    filter: none;
+    height: 1px;
+  }
+
+  /* Remove moving shimmer on mobile */
+  .navbar-container::before {
+    display: none !important;
+    animation: none !important;
+  }
+
+  /* Solid, clean mobile menu button */
+  .navbar-menu-toggle {
+    background: #f1f5f9 !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    border: 1px solid #cbd5e1;
+
+    box-shadow: none;
+  }
+
+  .navbar-menu-toggle:hover,
+  .navbar-menu-toggle.menu-open {
+    background: #eaf2ff !important;
+    border-color: #93c5fd;
+    box-shadow: none;
+  }
+}
+
+/* Extra solid navbar on small phones */
+@media (max-width: 480px) {
+  .navbar {
+    background: #ffffff !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    box-shadow:
+      0 3px 14px rgba(15, 23, 42, 0.09);
+  }
+}
